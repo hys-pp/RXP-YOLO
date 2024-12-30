@@ -22,5 +22,30 @@ This project uses PyTorch for its implementation. Please ensure your system incl
   
 Additional required packages can be installed via pip:
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
+
+```
+pip install timm
+```
 ## Code Usage
+
+### Training data set
+```
+python train.py
+```
+### Validation of the dataset
+```
+yolo detect val data=data\data.yaml model=weights\best.pt batch=16 imgsz=640 split=val device=0 workers=8
+```
+### Test data set
+```
+yolo detect val data=data\data.yaml model=weights\best.pt batch=16 imgsz=640 split=test device=0 workers=8
+```
+### Pruning (the best weight file obtained through training is used as a pre-trained model for pruning operations)
+```
+python prune_ok.py
+```
+### Customizing Hyperparameters
+Hyperparameter settings are flexible and can be adjusted within either `train.py` or `ultralytics\cfg\default.yaml`.
