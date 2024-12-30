@@ -32,14 +32,17 @@ pip install timm
 ## Code Usage
 
 ### Training data set
+Run the following script to train and evaluate:
 ```
 python train.py
 ```
 ### Validation of the dataset
+Run the following script to train and evaluate:
 ```
 yolo detect val data=data\data.yaml model=weights\best.pt batch=16 imgsz=640 split=val device=0 workers=8
 ```
 ### Test data set
+Run the following script to train and evaluate:
 ```
 yolo detect val data=data\data.yaml model=weights\best.pt batch=16 imgsz=640 split=test device=0 workers=8
 ```
